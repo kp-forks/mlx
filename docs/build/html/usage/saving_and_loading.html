@@ -19,30 +19,30 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'usage/saving_and_loading';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -57,10 +57,9 @@
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -101,11 +100,14 @@
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -135,11 +137,22 @@
     
     
     <img src="../_static/mlx_logo.png" class="logo__image only-light" alt="MLX 0.3.0 documentation - Home"/>
-    <script>document.write(`<img src="../_static/mlx_logo.png" class="logo__image only-dark" alt="MLX 0.3.0 documentation - Home"/>`);</script>
+    <script>document.write(`<img src="../_static/mlx_logo_dark.png" class="logo__image only-dark" alt="MLX 0.3.0 documentation - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Install</span></p>
 <ul class="nav bd-sidenav">
@@ -686,7 +699,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="saving-and-loading-arrays">
 <span id="saving-and-loading"></span><h1>Saving and Loading Arrays<a class="headerlink" href="#saving-and-loading-arrays" title="Permalink to this heading">#</a></h1>
@@ -733,36 +746,36 @@ document.write(`
 formats. It determines the format from the extensions. The output of
 <a class="reference internal" href="../python/_autosummary/mlx.core.load.html#mlx.core.load" title="mlx.core.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">load()</span></code></a> depends on the format.</p>
 <p>Here’s an example of saving a single array to a file:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; <span class="nv">a</span> <span class="o">=</span> mx.array<span class="o">([</span><span class="m">1</span>.0<span class="o">])</span>
-&gt;&gt;&gt; mx.save<span class="o">(</span><span class="s2">&quot;array&quot;</span>, a<span class="o">)</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;<span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>mx.array<span class="o">([</span><span class="m">1</span>.0<span class="o">])</span>
+&gt;&gt;&gt;<span class="w"> </span>mx.save<span class="o">(</span><span class="s2">&quot;array&quot;</span>,<span class="w"> </span>a<span class="o">)</span>
 </pre></div>
 </div>
 <p>The array <code class="docutils literal notranslate"><span class="pre">a</span></code> will be saved in the file <code class="docutils literal notranslate"><span class="pre">array.npy</span></code> (notice the extension
 is automatically added). Including the extension is optional; if it is missing
 it will be added. You can load the array with:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; mx.load<span class="o">(</span><span class="s2">&quot;array.npy&quot;</span>, a<span class="o">)</span>
-array<span class="o">([</span><span class="m">1</span><span class="o">]</span>, <span class="nv">dtype</span><span class="o">=</span>float32<span class="o">)</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;<span class="w"> </span>mx.load<span class="o">(</span><span class="s2">&quot;array.npy&quot;</span>,<span class="w"> </span>a<span class="o">)</span>
+array<span class="o">([</span><span class="m">1</span><span class="o">]</span>,<span class="w"> </span><span class="nv">dtype</span><span class="o">=</span>float32<span class="o">)</span>
 </pre></div>
 </div>
 <p>Here’s an example of saving several arrays to a single file:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; <span class="nv">a</span> <span class="o">=</span> mx.array<span class="o">([</span><span class="m">1</span>.0<span class="o">])</span>
-&gt;&gt;&gt; <span class="nv">b</span> <span class="o">=</span> mx.array<span class="o">([</span><span class="m">2</span>.0<span class="o">])</span>
-&gt;&gt;&gt; mx.savez<span class="o">(</span><span class="s2">&quot;arrays&quot;</span>, a, <span class="nv">b</span><span class="o">=</span>b<span class="o">)</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;<span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>mx.array<span class="o">([</span><span class="m">1</span>.0<span class="o">])</span>
+&gt;&gt;&gt;<span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>mx.array<span class="o">([</span><span class="m">2</span>.0<span class="o">])</span>
+&gt;&gt;&gt;<span class="w"> </span>mx.savez<span class="o">(</span><span class="s2">&quot;arrays&quot;</span>,<span class="w"> </span>a,<span class="w"> </span><span class="nv">b</span><span class="o">=</span>b<span class="o">)</span>
 </pre></div>
 </div>
 <p>For compatibility with <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.savez.html#numpy.savez" title="(in NumPy v1.26)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.savez()</span></code></a> the MLX <a class="reference internal" href="../python/_autosummary/mlx.core.savez.html#mlx.core.savez" title="mlx.core.savez"><code class="xref py py-func docutils literal notranslate"><span class="pre">savez()</span></code></a> takes arrays
 as arguments. If the keywords are missing, then default names will be
 provided. This can be loaded with:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; mx.load<span class="o">(</span><span class="s2">&quot;arrays.npz&quot;</span><span class="o">)</span>
-<span class="o">{</span><span class="s1">&#39;b&#39;</span>: array<span class="o">([</span><span class="m">2</span><span class="o">]</span>, <span class="nv">dtype</span><span class="o">=</span>float32<span class="o">)</span>, <span class="s1">&#39;arr_0&#39;</span>: array<span class="o">([</span><span class="m">1</span><span class="o">]</span>, <span class="nv">dtype</span><span class="o">=</span>float32<span class="o">)}</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;<span class="w"> </span>mx.load<span class="o">(</span><span class="s2">&quot;arrays.npz&quot;</span><span class="o">)</span>
+<span class="o">{</span><span class="s1">&#39;b&#39;</span>:<span class="w"> </span>array<span class="o">([</span><span class="m">2</span><span class="o">]</span>,<span class="w"> </span><span class="nv">dtype</span><span class="o">=</span>float32<span class="o">)</span>,<span class="w"> </span><span class="s1">&#39;arr_0&#39;</span>:<span class="w"> </span>array<span class="o">([</span><span class="m">1</span><span class="o">]</span>,<span class="w"> </span><span class="nv">dtype</span><span class="o">=</span>float32<span class="o">)}</span>
 </pre></div>
 </div>
 <p>In this case <a class="reference internal" href="../python/_autosummary/mlx.core.load.html#mlx.core.load" title="mlx.core.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">load()</span></code></a> returns a dictionary of names to arrays.</p>
 <p>The functions <a class="reference internal" href="../python/_autosummary/mlx.core.save_safetensors.html#mlx.core.save_safetensors" title="mlx.core.save_safetensors"><code class="xref py py-func docutils literal notranslate"><span class="pre">save_safetensors()</span></code></a> and <a class="reference internal" href="../python/_autosummary/mlx.core.save_gguf.html#mlx.core.save_gguf" title="mlx.core.save_gguf"><code class="xref py py-func docutils literal notranslate"><span class="pre">save_gguf()</span></code></a> are similar to
 <a class="reference internal" href="../python/_autosummary/mlx.core.savez.html#mlx.core.savez" title="mlx.core.savez"><code class="xref py py-func docutils literal notranslate"><span class="pre">savez()</span></code></a>, but they take as input a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a> of string names to arrays:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; <span class="nv">a</span> <span class="o">=</span> mx.array<span class="o">([</span><span class="m">1</span>.0<span class="o">])</span>
-&gt;&gt;&gt; <span class="nv">b</span> <span class="o">=</span> mx.array<span class="o">([</span><span class="m">2</span>.0<span class="o">])</span>
-&gt;&gt;&gt; mx.save_safetensors<span class="o">(</span><span class="s2">&quot;arrays&quot;</span>, <span class="o">{</span><span class="s2">&quot;a&quot;</span>: a, <span class="s2">&quot;b&quot;</span>: b<span class="o">})</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;<span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>mx.array<span class="o">([</span><span class="m">1</span>.0<span class="o">])</span>
+&gt;&gt;&gt;<span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>mx.array<span class="o">([</span><span class="m">2</span>.0<span class="o">])</span>
+&gt;&gt;&gt;<span class="w"> </span>mx.save_safetensors<span class="o">(</span><span class="s2">&quot;arrays&quot;</span>,<span class="w"> </span><span class="o">{</span><span class="s2">&quot;a&quot;</span>:<span class="w"> </span>a,<span class="w"> </span><span class="s2">&quot;b&quot;</span>:<span class="w"> </span>b<span class="o">})</span>
 </pre></div>
 </div>
 </section>
@@ -802,6 +815,8 @@ provided. This can be loaded with:</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
@@ -846,8 +861,8 @@ By MLX Contributors
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

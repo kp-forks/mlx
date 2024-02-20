@@ -19,30 +19,30 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'install';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -57,10 +57,9 @@
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -101,11 +100,14 @@
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -135,11 +137,22 @@
     
     
     <img src="_static/mlx_logo.png" class="logo__image only-light" alt="MLX 0.3.0 documentation - Home"/>
-    <script>document.write(`<img src="_static/mlx_logo.png" class="logo__image only-dark" alt="MLX 0.3.0 documentation - Home"/>`);</script>
+    <script>document.write(`<img src="_static/mlx_logo_dark.png" class="logo__image only-dark" alt="MLX 0.3.0 documentation - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Install</span></p>
 <ul class="current nav bd-sidenav">
@@ -710,7 +723,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="build-and-install">
 <h1>Build and Install<a class="headerlink" href="#build-and-install" title="Permalink to this heading">#</a></h1>
@@ -718,7 +731,7 @@ document.write(`
 <h2>Python Installation<a class="headerlink" href="#python-installation" title="Permalink to this heading">#</a></h2>
 <p>MLX is available on PyPI. All you have to do to use MLX with your own Apple
 silicon computer is</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install mlx
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>mlx
 </pre></div>
 </div>
 <p>To install from PyPI you must meet the following requirements:</p>
@@ -733,7 +746,7 @@ silicon computer is</p>
 It is highly recommended to use macOS 14 (Sonoma)</p>
 </div>
 <p>MLX is also available on conda-forge. To install MLX with conda do:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda install conda-forge::mlx
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>conda-forge::mlx
 </pre></div>
 </div>
 <section id="troubleshooting">
@@ -741,7 +754,7 @@ It is highly recommended to use macOS 14 (Sonoma)</p>
 <p><em>My OS and Python versions are in the required range but pip still does not find
 a matching distribution.</em></p>
 <p>Probably you are using a non-native Python. The output of</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -c <span class="s2">&quot;import platform; print(platform.processor())&quot;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import platform; print(platform.processor())&quot;</span>
 </pre></div>
 </div>
 <p>should be <code class="docutils literal notranslate"><span class="pre">arm</span></code>. If it is <code class="docutils literal notranslate"><span class="pre">i386</span></code> (and you have M series machine) then you
@@ -768,32 +781,32 @@ the output of <code class="docutils literal notranslate"><span class="pre">uname
 <h3>Python API<a class="headerlink" href="#python-api" title="Permalink to this heading">#</a></h3>
 <p>To build and install the MLX python library from source, first, clone MLX from
 <a class="reference external" href="https://github.com/ml-explore/mlx">its GitHub repo</a>:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:ml-explore/mlx.git mlx <span class="o">&amp;&amp;</span> <span class="nb">cd</span> mlx
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ml-explore/mlx.git<span class="w"> </span>mlx<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>mlx
 </pre></div>
 </div>
 <p>Make sure that you have <a class="reference external" href="https://pybind11.readthedocs.io/en/stable/index.html">pybind11</a>
 installed. You can install <code class="docutils literal notranslate"><span class="pre">pybind11</span></code> with <code class="docutils literal notranslate"><span class="pre">pip</span></code>, <code class="docutils literal notranslate"><span class="pre">brew</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code> as follows:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install <span class="s2">&quot;pybind11[global]&quot;</span>
-conda install pybind11
-brew install pybind11
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;pybind11[global]&quot;</span>
+conda<span class="w"> </span>install<span class="w"> </span>pybind11
+brew<span class="w"> </span>install<span class="w"> </span>pybind11
 </pre></div>
 </div>
 <p>Then simply build and install it using pip:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>env <span class="nv">CMAKE_BUILD_PARALLEL_LEVEL</span><span class="o">=</span><span class="s2">&quot;&quot;</span> pip install .
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>env<span class="w"> </span><span class="nv">CMAKE_BUILD_PARALLEL_LEVEL</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
 </pre></div>
 </div>
 <p>For developing use an editable install:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>env <span class="nv">CMAKE_BUILD_PARALLEL_LEVEL</span><span class="o">=</span><span class="s2">&quot;&quot;</span> pip install -e .
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>env<span class="w"> </span><span class="nv">CMAKE_BUILD_PARALLEL_LEVEL</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </div>
 <p>To make sure the install is working run the tests with:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install <span class="s2">&quot;.[testing]&quot;</span>
-python -m unittest discover python/tests
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;.[testing]&quot;</span>
+python<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>python/tests
 </pre></div>
 </div>
 <p>Optional: Install stubs to enable auto completions and type checking from your IDE:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install <span class="s2">&quot;.[dev]&quot;</span>
-python setup.py generate_stubs
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;.[dev]&quot;</span>
+python<span class="w"> </span>setup.py<span class="w"> </span>generate_stubs
 </pre></div>
 </div>
 </section>
@@ -802,20 +815,20 @@ python setup.py generate_stubs
 <p>Currently, MLX must be built and installed from source.</p>
 <p>Similarly to the python library, to build and install the MLX C++ library start
 by cloning MLX from <a class="reference external" href="https://github.com/ml-explore/mlx">its GitHub repo</a>:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:ml-explore/mlx.git mlx <span class="o">&amp;&amp;</span> <span class="nb">cd</span> mlx
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ml-explore/mlx.git<span class="w"> </span>mlx<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>mlx
 </pre></div>
 </div>
 <p>Create a build directory and run CMake and make:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir -p build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
-cmake .. <span class="o">&amp;&amp;</span> make -j
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+cmake<span class="w"> </span>..<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>-j
 </pre></div>
 </div>
 <p>Run tests with:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make <span class="nb">test</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span><span class="nb">test</span>
 </pre></div>
 </div>
 <p>Install with:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make install
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>install
 </pre></div>
 </div>
 <p>Note that the built <code class="docutils literal notranslate"><span class="pre">mlx.metallib</span></code> file should be either at the same
@@ -856,12 +869,12 @@ should point to the path to the built metal library.</p>
 <p>If you have multiple Xcode installations and wish to use
 a specific one while building, you can do so by adding the
 following environment variable before building</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">DEVELOPER_DIR</span><span class="o">=</span><span class="s2">&quot;/path/to/Xcode.app/Contents/Developer/&quot;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">DEVELOPER_DIR</span><span class="o">=</span><span class="s2">&quot;/path/to/Xcode.app/Contents/Developer/&quot;</span>
 </pre></div>
 </div>
 <p>Further, you can use the following command to find out which
 macOS SDK will be used</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>xcrun -sdk macosx --show-sdk-version
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>xcrun<span class="w"> </span>-sdk<span class="w"> </span>macosx<span class="w"> </span>--show-sdk-version
 </pre></div>
 </div>
 </div>
@@ -871,15 +884,15 @@ macOS SDK will be used</p>
 <section id="metal-not-found">
 <h4>Metal not found<a class="headerlink" href="#metal-not-found" title="Permalink to this heading">#</a></h4>
 <p>You see the following error when you try to build:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>error: unable to find utility <span class="s2">&quot;metal&quot;</span>, not a developer tool or <span class="k">in</span> PATH
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>error:<span class="w"> </span>unable<span class="w"> </span>to<span class="w"> </span>find<span class="w"> </span>utility<span class="w"> </span><span class="s2">&quot;metal&quot;</span>,<span class="w"> </span>not<span class="w"> </span>a<span class="w"> </span>developer<span class="w"> </span>tool<span class="w"> </span>or<span class="w"> </span><span class="k">in</span><span class="w"> </span>PATH
 </pre></div>
 </div>
 <p>To fix this, first make sure you have Xcode installed:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>xcode-select --install
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>xcode-select<span class="w"> </span>--install
 </pre></div>
 </div>
 <p>Then set the active developer directory:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>xcode-select<span class="w"> </span>--switch<span class="w"> </span>/Applications/Xcode.app/Contents/Developer
 </pre></div>
 </div>
 </section>
@@ -892,13 +905,13 @@ Rosetta instead of natively.</p>
 Uncheck “Open using Rosetta”, close the “Get Info” window, and restart your
 terminal.</p>
 <p>Verify the terminal is now running natively the following command:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ uname -p
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>uname<span class="w"> </span>-p
 arm
 </pre></div>
 </div>
 <p>Also check that cmake is using the correct architecture:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ cmake --system-information <span class="p">|</span> grep CMAKE_HOST_SYSTEM_PROCESSOR
-CMAKE_HOST_SYSTEM_PROCESSOR <span class="s2">&quot;arm64&quot;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cmake<span class="w"> </span>--system-information<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>CMAKE_HOST_SYSTEM_PROCESSOR
+CMAKE_HOST_SYSTEM_PROCESSOR<span class="w"> </span><span class="s2">&quot;arm64&quot;</span>
 </pre></div>
 </div>
 <p>If you see <code class="docutils literal notranslate"><span class="pre">&quot;x86_64&quot;</span></code>, try re-installing <code class="docutils literal notranslate"><span class="pre">cmake</span></code>. If you see <code class="docutils literal notranslate"><span class="pre">&quot;arm64&quot;</span></code>
@@ -946,6 +959,7 @@ wipe your build cahce with <code class="docutils literal notranslate"><span clas
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1016,8 +1030,8 @@ By MLX Contributors
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
