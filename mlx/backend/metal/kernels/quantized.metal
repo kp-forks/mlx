@@ -1,4 +1,4 @@
-// Copyright © 2023 Apple Inc.
+// Copyright © 2023-2024 Apple Inc.
 
 #include <metal_stdlib>
 #include <metal_simdgroup>
@@ -37,9 +37,7 @@ template <typename T>
     uint simd_gid [[simdgroup_index_in_threadgroup]],
     uint simd_lid [[thread_index_in_simdgroup]]) {
 
-  (void)lid;
-
-  constexpr int BM = 32;
+  constexpr int BM = 8;
   constexpr int BN = 32;
   constexpr int bits = 4;
   constexpr int group_size = 32;
@@ -47,6 +45,7 @@ template <typename T>
   constexpr int el_per_thread = 32 / bits;
   constexpr int colgroup = BN * el_per_thread;
   constexpr int groups_per_block = colgroup / group_size;
+  static_assert(BM == el_per_thread, "BM should match the pack factor");
 
   typedef typename AccT<T>::acc_t U;
   threadgroup U scales_block[BM * groups_per_block];
@@ -77,21 +76,10 @@ template <typename T>
   for (int i=0; i<in_vec_size; i+=colgroup) {
     // Load the vec to shared memory
     threadgroup_barrier(mem_flags::mem_threadgroup);
-    if (simd_gid == 0) {
-      #pragma clang loop unroll(full)
-      for (int j=0; j<el_per_thread; j++) {
-        x_block[simd_lid * el_per_thread + j] = x[i + simd_lid * el_per_thread + j];
-      }
-    }
-    if (simd_lid == 0) {
-      #pragma clang loop unroll(full)
-      for (int j=0; j<groups_per_block; j++) {
-        scales_block[simd_gid * groups_per_block + j] = scales[i / group_size + j];
-      }
-      #pragma clang loop unroll(full)
-      for (int j=0; j<groups_per_block; j++) {
-        biases_block[simd_gid * groups_per_block + j] = biases[i / group_size + j];
-      }
+    x_block[lid] = x[lid];
+    if (simd_lid < groups_per_block) {
+      scales_block[simd_gid * groups_per_block + simd_lid] = scales[simd_lid];
+      biases_block[simd_gid * groups_per_block + simd_lid] = biases[simd_lid];
     }
     threadgroup_barrier(mem_flags::mem_threadgroup);
 
@@ -100,11 +88,11 @@ template <typename T>
     for (int j=0; j<el_per_thread; j++) {
       x_thread[j] = x_block[simd_lid*el_per_thread + j];
     }
-    scale = scales_block[simd_gid * groups_per_block + simd_lid * el_per_thread / group_size];
-    bias = biases_block[simd_gid * groups_per_block + simd_lid * el_per_thread / group_size];
+    scale = scales_block[simd_gid * groups_per_block + simd_lid / (group_size / el_per_thread)];
+    bias = biases_block[simd_gid * groups_per_block + simd_lid / (group_size / el_per_thread)];
 
     // Load the matrix elements
-    w_local = w[i / el_per_thread + simd_lid];
+    w_local = w[simd_lid];
 
     // Do all the work.
     #pragma clang loop unroll(full)
@@ -112,6 +100,12 @@ template <typename T>
       result += (scale * static_cast<U>(w_local & bitmask) + bias) * x_thread[k];
       w_local >>= bits;
     }
+
+    // Advance the pointers
+    x += colgroup;
+    w += BN;
+    scales += groups_per_block;
+    biases += groups_per_block;
   }
 
   // Accumulate in the simdgroup
@@ -634,7 +628,7 @@ template <typename T, const int BM, const int BK, const int BN, const int group_
 
 
 #define instantiate_qmv_4_32(name, itype) \
-  template [[host_name("qmv_" #name "_gs_32_b_4")]] \
+  template [[host_name("qmv_" #name "_gs_32_b_4_fast")]] \
   [[kernel]] void qmv_4_32<itype>( \
     const device uint32_t* w [[buffer(0)]], \
     const device itype* scales [[buffer(1)]], \
@@ -679,7 +673,7 @@ instantiate_qmv_types( 64, 2)
 instantiate_qmv_types( 64, 4)
 instantiate_qmv_types( 64, 8)
 instantiate_qmv_types( 32, 2)
-//instantiate_qmv_types( 32, 4)
+instantiate_qmv_types( 32, 4)
 instantiate_qmv_types( 32, 8)
 
 #define instantiate_qvm(name, itype, group_size, bits) \
