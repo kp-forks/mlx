@@ -51,6 +51,7 @@ __global__ void qmm_naive_kernel(
     const Quant*   B, StrideB dB, SmemLayoutB sB_layout, TiledCopyB copy_b,
           Element* C, StrideC dC,
     const Scale* S, const Element* Z, LayoutS S_layout,
+    const uint32_t* lhs_indices, const uint32_t* rhs_indices,
     TiledMma mma) {
   CUTE_STATIC_ASSERT_V(size(copy_a) == size(mma));
   CUTE_STATIC_ASSERT_V(size(copy_b) == size(mma));
@@ -69,13 +70,17 @@ __global__ void qmm_naive_kernel(
   Tensor mS_nkl = make_tensor(make_gmem_ptr(S), S_layout); // (N,(group_size,K/group_size),L)
   Tensor mZ_nkl = make_tensor(make_gmem_ptr(Z), S_layout); // (N,(group_size,K/group_size),L)
 
+  // For gather, use index lookup for input batch slicing.
+  uint32_t a_batch = lhs_indices ? lhs_indices[l_coord] : l_coord;
+  uint32_t b_batch = rhs_indices ? rhs_indices[l_coord] : l_coord;
+
   // Get batch slice.
-  Tensor mA = mA_mkl(_,_,l_coord); // (M,K)
-  Tensor mB = mB_nkl(_,_,l_coord); // (N,K)
+  Tensor mA = mA_mkl(_,_,a_batch); // (M,K)
+  Tensor mB = mB_nkl(_,_,b_batch); // (N,K)
   Tensor mC = mC_mnl(_,_,l_coord); // (M,N)
 
-  Tensor mS = mS_nkl(_,_,l_coord); // (N,(group_size,K/group_size))
-  Tensor mZ = mZ_nkl(_,_,l_coord); // (N,(group_size,K/group_size))
+  Tensor mS = mS_nkl(_,_,b_batch); // (N,(group_size,K/group_size))
+  Tensor mZ = mZ_nkl(_,_,b_batch); // (N,(group_size,K/group_size))
 
   // Get the appropriate blocks for this thread block.
   auto cta_coord = make_coord(m_coord, n_coord, _); // (m,n,k)
@@ -270,6 +275,8 @@ void qmm_naive(
     const Quant*   B,
     const Scale*   S,
     const Element* Z,
+    const uint32_t* lhs_indices,
+    const uint32_t* rhs_indices,
     Element* C,
     int m, int n, int k, int l,
     bool broadcast_b,
@@ -330,6 +337,7 @@ void qmm_naive(
       &B, &dB, &sB_layout, &copy_b,
       &C, &dC,
       &S, &Z, &S_layout,
+      &lhs_indices, &rhs_indices,
       &mma};
   launch_kernel(reinterpret_cast<void*>(kernel), num_blocks, block_dims, smem_bytes, args);
 }
@@ -409,6 +417,8 @@ void qmm_impl_naive(
     const array& w,
     const array& scales,
     const std::optional<array>& biases,
+    const std::optional<array>& lhs_indices,
+    const std::optional<array>& rhs_indices,
     array& out,
     int bits,
     int group_size,
@@ -436,12 +446,20 @@ void qmm_impl_naive(
             if (biases) {
               encoder.set_input_array(*biases);
             }
+            if (lhs_indices) {
+              encoder.set_input_array(*lhs_indices);
+            }
+            if (rhs_indices) {
+              encoder.set_input_array(*rhs_indices);
+            }
             encoder.set_output_array(out);
             cutlass_gemm::qmm_naive<TileM, KMajor, sm80.value>(
                 gpu_ptr<Element>(x),
                 gpu_ptr<Quant>(w),
                 gpu_ptr<Scale>(scales),
                 biases ? gpu_ptr<Element>(*biases) : nullptr,
+                lhs_indices ? gpu_ptr<uint32_t>(*lhs_indices) : nullptr,
+                rhs_indices ? gpu_ptr<uint32_t>(*rhs_indices) : nullptr,
                 gpu_ptr<Element>(out),
                 m,
                 n,
@@ -471,6 +489,8 @@ void qmm_impl_naive(
       const array& w,                          \
       const array& scales,                     \
       const std::optional<array>& biases,      \
+      const std::optional<array>& lhs_indices, \
+      const std::optional<array>& rhs_indices, \
       array& out,                              \
       int bits,                                \
       int group_size,                          \
